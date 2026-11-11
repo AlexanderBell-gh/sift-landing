@@ -104,7 +104,7 @@ export default function LandingPage() {
               {isDark ? <Sun className="icon-md" /> : <Moon className="icon-md" />}
             </button>
 
-            <button onClick={() => { window.location.href = 'https://siftsearch.pages.dev/auth'; }} className="user-menu-wrapper" aria-label="Sign in">
+            <button onClick={() => { window.location.href = 'https://siftsearch.pages.dev'; }} className="user-menu-wrapper" aria-label="Sign in">
               <div className="user-avatar">
                 <LogIn className="icon-sm" />
               </div>
