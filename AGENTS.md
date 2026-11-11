@@ -33,5 +33,5 @@ React 19 + TypeScript 7 + Vite 8 + Tailwind v4; Cloudflare Pages; GitHub Actions
 ## Docs (user-triggered)
 
 - On **"finish up and update docs"** update `RECENT.md`, `ARCHITECTURE.md` (fix anything stale, ~175 lines), `README.md` only for new features / `.env` keys / commands, and `AGENTS.md` keep lean & for sweeping changes only. If implementing anything front-end see and update `DESIGN.md`
-- Location: `RECENT.md`, `ARCHITECTURE.md` + `DESIGN.md` in `/home/wsl/Repositories/markdown/sift-markdown/`; `README.md` in the repo root.
+- Location: `RECENT.md`, `ARCHITECTURE.md` + `DESIGN.md` in `/home/wsl/Repositories/markdowns/sift-markdowns/landing/`; `README.md` in the repo root.
 - **Stop after here.** Never commit; report the change and suggest a commit message (`feat:`, `fix:`, `chore:`, `polish:`).
