@@ -1,6 +1,8 @@
 # sift-landing
 
-Landing page for Sift — "One list for the whole shop".
+Landing page for Sift - UK Grocery Tracker.
+
+> Live: [Sift](https://siftuk.pages.dev)
 
 Standalone React + Vite + Tailwind marketing page, deployed to Cloudflare Pages.
 Includes the legal pages (privacy, cookies, terms, about, license) and the
