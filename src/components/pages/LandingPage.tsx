@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Search, Bookmark, Bell, Puzzle, ShoppingCart, Sun, Moon, LogIn, Smartphone, Check } from 'lucide-react';
+import { Search, Bookmark, Bell, Puzzle, ShoppingCart, Sun, Moon, LogIn, Check } from 'lucide-react';
 import { useTheme } from '../../hooks/useTheme';
 import { useRevealRoot } from '../../hooks/useReveal';
 import {
@@ -116,13 +116,10 @@ export default function LandingPage() {
 
       <section className="hero">
         <div className="container">
-          <p className="landing-hero-eyebrow">
-            <Smartphone className="icon-sm" aria-hidden="true" />
-            Android app coming soon
-          </p>
+          <p/>
           <h1 className="landing-hero-title">
-            One list for the whole shop.
-            <span className="text-gradient block">Every store. Every deal.</span>
+             One list for the whole shop.
+             <span className="text-gradient block">Every store. Every deal.</span>
           </h1>
           <p className="landing-hero-sub">
             Search 10 UK supermarkets, pin your staples, and shop from one smart
@@ -179,7 +176,7 @@ export default function LandingPage() {
           <span className="field-label">How it works</span>
           <h2 id="steps-heading" className="page-title">Up and running in three steps</h2>
         </div>
-        <div className="grid gap-4 sm:grid-cols-3 landing-steps">
+        <div className="grid gap-4 sm:grid-cols-3 landing-steps" data-reveal>
           {STEPS.map(s => (
             <div key={s.n} className={`metric-card metric-card--static landing-step ${s.mod}`}>
               <span className="landing-step-bar" aria-hidden="true" />
@@ -254,10 +251,10 @@ export default function LandingPage() {
             </a>
           </div>
           <nav className="landing-footer-links" aria-label="Legal">
-            <a href="https://siftsearch.pages.dev/privacy">Privacy</a>
-            <a href="https://siftsearch.pages.dev/terms">Terms</a>
-            <a href="https://siftsearch.pages.dev/cookies">Cookies</a>
-            <a href="https://siftsearch.pages.dev/about">About</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+            <a href="/cookies">Cookies</a>
+            <a href="/about">About</a>
             <button
               type="button"
               className="landing-footer-btn"
@@ -268,7 +265,7 @@ export default function LandingPage() {
           </nav>
           </div>
           <div className="landing-footer-bottom">
-            <a href="https://siftsearch.pages.dev/license" className="landing-footer-mit">MIT License</a>
+            <a href="/license" className="landing-footer-mit">MIT License</a>
             <p className="landing-footer-built">Built with <a href="https://react.dev" target="_blank" rel="noreferrer">React</a> + <a href="https://vite.dev" target="_blank" rel="noreferrer">Vite</a> · Deployed on <a href="https://cloudflare.com" target="_blank" rel="noreferrer">Cloudflare</a></p>
           </div>
         </div>

@@ -544,12 +544,23 @@ body {
   line-height: 1.5;
 }
 
-.metric-card--static {
-  gap: 12px;
+.metric-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: border-color 0.2s;
 }
 
-.metric-card--static:hover {
-  border-color: var(--border);
+.metric-card:hover {
+  border-color: var(--primary);
+}
+
+.metric-card--static {
+  gap: 12px;
 }
 /* Landing "How it works" steps — staggered entrances + sequential flow bars */
 .landing-step {
@@ -920,6 +931,16 @@ body {
 .landing-footer-built {
   margin: 0;
 }
+.deals-track-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes deals-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
 /* Landing store strip — faded ghost SVGs, slow scroll below hero */
 .stores-marquee {
   overflow: hidden;
@@ -2224,6 +2245,10 @@ body {
   transition: background-color 0.15s;
 }
 
+.btn-primary:hover {
+  background-color: color-mix(in oklab, var(--primary) 88%, black);
+}
+
 .metric-value {
   font-family: var(--font-mono);
   font-size: 28px;
@@ -2231,4 +2256,157 @@ body {
   color: var(--text);
   line-height: 1.2;
   font-variant-numeric: tabular-nums;
+}
+
+/* Legal pages (privacy, cookies) — article card, tokens only */
+.legal-wrap {
+  padding-top: 40px;
+  padding-bottom: 80px;
+  max-width: 760px;
+}
+
+.legal-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 16px;
+}
+
+.legal-back:hover {
+  color: var(--primary);
+}
+
+.legal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.legal-card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.legal-card p:first-of-type {
+  color: var(--text);
+}
+
+.legal-title {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.legal-updated {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.legal-card h2 {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 12px 0 0;
+}
+
+.legal-card ul {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: var(--muted);
+}
+
+.legal-card code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 6px;
+  white-space: nowrap;
+}
+
+.legal-card a {
+  color: var(--primary);
+}
+
+@media (max-width: 640px) {
+  .legal-wrap {
+    padding-top: 24px;
+  }
+
+  .legal-card {
+    padding: 24px 20px;
+  }
+
+  .legal-title {
+    font-size: 24px;
+  }
+}
+
+/* Cookie Consent */
+.cookie-banner {
+  max-width: 750px;
+  margin: 0 16px 16px;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+.cookie-banner-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+.cookie-banner-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--primary);
+}
+.cookie-banner button {
+  cursor: pointer;
+}
+.cookie-banner-link {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-banner-link:hover {
+  opacity: 0.85;
+}
+@media (min-width: 640px) {
+  .cookie-banner {
+    margin: 0 auto 16px;
+    padding: 20px;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+  }
+}
+.dark .cookie-banner {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
 }

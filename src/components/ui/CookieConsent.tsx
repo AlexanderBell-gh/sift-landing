@@ -1,0 +1,82 @@
+import { useState, useEffect } from 'react';
+import { Cookie } from 'lucide-react';
+
+export function CookieConsent() {
+  const [visible, setVisible] = useState(false);
+  const [dismissing, setDismissing] = useState(false);
+
+  useEffect(() => {
+    const consented = localStorage.getItem('cookie_consent');
+    if (!consented) {
+      const timer = setTimeout(() => setVisible(true), 500);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
+  useEffect(() => {
+    function onRevoke() {
+      setDismissing(false);
+      setVisible(false);
+      const timer = setTimeout(() => setVisible(true), 500);
+      return () => clearTimeout(timer);
+    }
+    document.addEventListener('cookie-consent-revoked', onRevoke);
+    return () => document.removeEventListener('cookie-consent-revoked', onRevoke);
+  }, []);
+
+  function accept() {
+    localStorage.setItem('cookie_consent', 'accepted');
+    dismiss();
+  }
+
+  function dismiss() {
+    setDismissing(true);
+    setTimeout(() => {
+      setVisible(false);
+      setDismissing(false);
+    }, 250);
+  }
+
+  if (!visible) return null;
+
+  return (
+    <div
+      className={`cookie-consent-wrap fixed bottom-0 left-0 right-0 z-[100] transition-all duration-250 ${
+        dismissing ? 'translate-y-full opacity-0' : 'translate-y-0 opacity-100'
+      }`}
+    >
+      <div
+        className="cookie-banner"
+      >
+        <div className="cookie-banner-body">
+          <Cookie className="cookie-banner-icon" />
+          <div className="min-w-0">
+            <p className="text-sm font-medium" style={{ color: 'var(--text)' }}>
+              Your privacy choices
+            </p>
+            <p className="text-xs mt-0.5" style={{ color: 'var(--muted)' }}>
+              Sift keeps your sign-in and preferences in this browser only — no
+              tracking cookies. See the <a href="/cookies" className="cookie-banner-link">cookie policy</a>.
+            </p>
+          </div>
+        </div>
+        <div className="flex items-center gap-2 shrink-0">
+          <button
+            onClick={dismiss}
+            className="px-3 py-2 rounded-xl text-sm font-medium hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2"
+            style={{ color: 'var(--muted)' }}
+          >
+            Dismiss
+          </button>
+          <button
+            onClick={accept}
+            className="px-5 py-2 rounded-xl text-sm font-medium hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 text-white"
+            style={{ background: 'var(--primary)' }}
+          >
+            Got it
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
