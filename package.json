@@ -1,6 +1,6 @@
 {
   "name": "sift-landing",
-  "description": "Sift landing page — one list for the whole shop",
+  "description": "Sift's landing page",
   "private": true,
   "version": "1.0.0",
   "packageManager": "pnpm@12.14.0",
@@ -11,7 +11,7 @@
     "lint": "oxlint"
   },
   "dependencies": {
-    "lucide-react": "^1.70.0",
+    "lucide-react": "^1.71.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },
@@ -22,7 +22,7 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.3.0",
     "autoprefixer": "^10.6.2",
-    "oxlint": "^1.92.0",
+    "oxlint": "^1.93.0",
     "tailwindcss": "^4.3.5",
     "typescript": "~7.0.2",
     "vite": "^8.3.7"
