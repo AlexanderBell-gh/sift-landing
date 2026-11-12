@@ -20,7 +20,7 @@
 
 <!-- Screenshots (pending real captures): Hero, Offers carousel, Popular right now -->
 
-UK supermarket grocery tracker landing page. This repo contains the public-facing marketing site: hero, search bar, offers and popular carousels, feature highlights, legal pages (privacy, cookies, terms, about, license) and the cookie notice. The signed-in app (search, watchlist, shopping list, auth) lives in the main [Sift](https://github.com/AlexanderBell-gh/Sift) repository.
+UK supermarket grocery tracker landing page. This repo contains the public-facing marketing site: legal pages (privacy, cookies, terms, about, license) and the cookie notice. The signed-in app (search, watchlist, shopping list, auth) lives in the main [Sift](https://github.com/AlexanderBell-gh/Sift) repository.
 
 ## Deploy
 

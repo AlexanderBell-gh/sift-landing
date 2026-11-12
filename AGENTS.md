@@ -28,7 +28,7 @@ pnpm lint      # Run OXLint style checks
 React 19 + TypeScript 7 + Vite 8 + Tailwind v4; Cloudflare Pages; GitHub Actions → Pages.
 
 `src/` React SPA (`components/{pages,features,ui}, contexts, hooks)`.
-- **Routes:** `Sign In` links to https://siftsearch.pages.dev/auth.
+- **Routes:** `Sign In` links to https://siftsearch.pages.dev/auth. Legal `/about`, `/cookies`, `/license`, `/privacy`, `/terms`; "Back to Sift" returns to the referring app page on `siftsearch.pages.dev`, else `/`.
 
 ## Docs (user-triggered)
 
