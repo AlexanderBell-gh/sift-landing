@@ -1,11 +1,25 @@
 import type { ReactNode } from 'react';
 import { ArrowLeft } from 'lucide-react';
 
+const SIFT_APP_ORIGIN = 'https://siftsearch.pages.dev';
+
+// Legal pages are linked from the app, whose redirect keeps that page as the
+// referrer. Send visitors back there; direct visits fall back to the landing home.
+function backToSiftHref(): string {
+  const referrer = document.referrer;
+  if (!referrer) return '/';
+  try {
+    return new URL(referrer).origin === SIFT_APP_ORIGIN ? referrer : '/';
+  } catch {
+    return '/';
+  }
+}
+
 function LegalLayout({ title, updated, children }: { title: string; updated?: string; children: ReactNode }) {
   return (
     <div className="page-shell">
       <div className="container legal-wrap">
-        <a href="/" className="legal-back">
+        <a href={backToSiftHref()} className="legal-back">
           <ArrowLeft className="icon-sm" aria-hidden="true" />
           Back to Sift
         </a>
